@@ -12,9 +12,9 @@ Workshop materials
 
 Suggested version 8. (example openjdk version 1.8.0_181)
 
-`> etlas -version`
+`> etlas --version`
 
-`> eta -version`
+`> eta --version`
 
 
 ##  simple eta project
