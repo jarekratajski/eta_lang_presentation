@@ -98,13 +98,11 @@ deploy on WebSphere
 
 
 
-
-# Make .JAR now .WAR
-
+deploy wherever you want
 
 
 
-# but why?
+# but why Haskell?
 
 
 
@@ -122,7 +120,7 @@ Simple syntax
 
 
 
-# Expression
+# Expressions
 
 
 
@@ -144,7 +142,11 @@ swith (deployment) {
 ```
 
 ```haskell
-
+crazinessLevel::Deployment->Server->Int
+crazinessLevel JAR _ = 1
+crazinessLevel WAR _ = 3
+crazinessLevel EAR Server ( "Websphere")  = 7
+-- compilation error
 ```
 
 
@@ -153,8 +155,8 @@ swith (deployment) {
 
 
 
-```java
 
+```java
 interface JSONSerializable {
     JSON toJSON();
 }
@@ -167,7 +169,11 @@ class My implements JSONSerializable {
 ```
 
 
-What about fromJSON
+
+What about **fromJSON**?
+
+
+
 
 ```java
 interface JSONDeserializable {
@@ -175,11 +181,11 @@ interface JSONDeserializable {
 }
 ```
 
-TODO wrong
+this is just wrong<!-- .element class="fragment" -->
+
 
 
 ```haskell
-
 instance ToJSON Person where
     toJSON (Person name age) =
         object ["name" .= name, "age" .= age]
@@ -191,7 +197,10 @@ instance FromJSON Person where
 
 ```
 
-TODO (add typeclasses defs)
+```haskell
+class FromJSON a where
+    parseJSON :: JSON -> a
+```
 
 
 
@@ -201,7 +210,6 @@ TODO (add typeclasses defs)
 
 Event sourcing
 
-
 ```java
 interface Event<STATE> {
     STATE apply(STATE input);
@@ -209,33 +217,57 @@ interface Event<STATE> {
 ```
 
 
+
 What about?
  
-`new Date()`
-` LocalDateTime.now()`
-`new Random().nextInt()`
-`Files.newInputStream()`
+```java 
+class MyEvent implements Event<X>
+
+    public X apply(X before) { 
+      new Date()
+      LocalDateTime.now()
+      new Random().nextInt()
+      Files.newInputStream()
+   }
+}
+```
+
+Disaster
 
 
 
 ```haskell
 apply::State->Event->State
-
 ```
+
+No way You can make side effects here(*)
+
 
 
 ```haskell
-haveSideEffect::State->Event->IO State
+applyWithSideEffects::State->Event->IO State
 
 ```
 
 
-And many more
 
+And many more...
+
+
+
+# Haskel lesson
 
 Writing important business code in impure
-language such as Java, Kotlin or even Scala is an act of a great
+language such as Java, Kotlin or even Scala seems  to be an act of a great
 irresponsibility
+
+
+
+# Haskell
+
+- less bugs
+- less tests
+- less code
 
 
 
@@ -243,44 +275,35 @@ yes but
 
 
 
-Haskell problems
-
-
-No real IDE
-
-Not that much
-
-Language is your IDE
+Haskell has own problems
 
 
 
-Tools
-
-Sometimes
-
-Stack vs Cabal
-
-
-Libraries
-
-Actually this is a problem
-
-
-
-# Solution
+- No real IDE
+- Tools
+- Libraries (quality!)
+- Old language (compiler extensions)
 
 
 
 # Eta
 
+Haskell on JVM
+
+
+
+Open source  designed by Typelead
+
 
 
 # Typelead
 
-Company founded to create eta and in the future provide commercial support for it.
+Company founded to create eta and in the future provide commercial support for it
+
 
 
 I am not associated with Typelead
+
 
 
 Whatever I say or show here are mine own studies. I got help from typelead developers and eta community.
@@ -289,10 +312,11 @@ I am neither experienced haskell nor eta developer.
 
 What I say might be wrong or may not reflect the reality or the future. 
 
-I just tried to do my best.
+I just try to do my best.
 
 
-We talk about unfinished product.
+
+We talk about unfinished product
 
 
 
@@ -329,7 +353,8 @@ $ java -jar Main.jar
 ```
 
 
-## Etlas (cabal for Eta)
+
+## Etlas (build tool for Eta)
 
 ```
 $ etlas init
@@ -339,6 +364,7 @@ $ etlas build
 $ etlas run
 
 ```
+
 
 
 For more info see [Eta tour](https://tour.eta-lang.org/)  page
