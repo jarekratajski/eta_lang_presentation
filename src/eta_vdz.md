@@ -134,12 +134,29 @@ swith (deployment) {
         craziness = 3;
         break; 
     case EAR:
-        if (server = "WebSphere") {
+        if (server.equals("WebSphere")) {
             craziness = 7;
         }
          break;
 }
 ```
+
+
+got you
+
+
+
+```java
+int crazinessLevel = swith (deployment) {
+    case JAR ->  1;
+        
+    case WAR -> 3;
+    
+    case EAR -> server.equals("WebSphere") ? 7 : 5;
+}
+```
+
+In Java 12 (just released)
 
 
 
@@ -154,8 +171,7 @@ crazinessLevel EAR "Websphere"  = 7
 
 
 
-# Typeclass
-
+# Polymorphism
 
 
 
@@ -279,7 +295,19 @@ without even asking<!-- .element class="fragment" -->
 
 
 
-And many more...
+# Most Important feature
+
+
+
+no `;` semicolons 
+ 
+![no semicolons](src/images/nosemicolon.jpg) 
+- 21 years before Kotlin<!-- .element class="fragment" -->
+- 14 years before Scala<!-- .element class="fragment" -->
+
+
+
+ Many more...
 
 
 
@@ -291,11 +319,12 @@ And many more...
 
 
 
-# Haskel lesson
+## After practicing Haskel..
 
 Writing important business code in impure, imperative
-language such as Java, Kotlin or even Scala seems  to be an act of a great
-irresponsibility
+language such as `Java`, `Kotlin` or even `Scala` 
+seems  to be ant act of
+*irresponsibility*
 
 
 
@@ -315,6 +344,8 @@ Haskell has own problems
 
 
 Different way of thinking
+
+![mind broken](src/images/exploding-head.png)
 
 
 
@@ -1324,5 +1355,3 @@ You may accidentally understand the `M...` word
 
 ### Thank You
 `@jarek000000`
-
-
