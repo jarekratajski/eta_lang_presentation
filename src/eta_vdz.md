@@ -19,19 +19,19 @@ Java developer (since 1999) with a functional  heart
 
 
 
-Lots of developers that love Haskell
+Lots of developers love Haskell
 
-![Haskell](/src/images/haskell.png)<!-- .element class="center" -->
+![Haskell](/src/images/haskell.png)<!-- .element class="center" height="500"-->
 
 
 
 but when it comes to business...
 
-![Industry](/src/images/industry.jpg)<!-- .element class="center" -->
+![Industry](/src/images/industry.jpg)<!-- .element class="center" height="500"-->
 
 
 
-![Java](/src/images/onlyjava.jpg)<!-- .element class="center" -->
+![Java](/src/images/onlyjava.jpg)<!-- .element class="center" height="500"-->
 
 
 
@@ -82,11 +82,11 @@ From https://github.com/fosskers/scalaz-and-cats
 
 
 
-deploy to JVM
+compile to JVM bytecode
 
 
 
-glue with Java
+glue with Java libraries
 
 
 
@@ -94,23 +94,32 @@ deploy on WebSphere
 
 
 
-no no no (TODO)
+![bad joke](/src/images/badjoke.jpg)
 
 
 
-# but why (TODO)
+
+# Make .JAR now .WAR
+
+
+
+
+# but why?
 
 
 
 Haskell is a great language
 
 
-```haskell
 
+```haskell
 myfunction::InputType->OutputType
 myfunction  x = 2*x
 
 ```
+
+Simple syntax
+
 
 
 # Expression

@@ -25,7 +25,7 @@ Lots of developers that love Haskell
 
 but when it comes to business...
 
-![Industry](/src/images/industry.jpg)<!-- .element class="center" -->
+![Industry](/src/images/industry.jpg)<!-- .element class="center" height="500"-->
 
 
 ![Java](/src/images/onlyjava.jpg)<!-- .element class="center" -->
@@ -118,6 +118,11 @@ We talk about not finished product.
 
 
 # Workshop start
+
+
+https://goo.gl/H6gZUy
+or 
+https://github.com/jarekratajski/eta_lang_presentation/blob/master/src/ws_material.md
 
 
 
@@ -866,7 +871,7 @@ I used Frege very shortly.
 ## Eta now
 
 
-Eta is 0.8.0b1 is (probably) not of  production quality,  yet
+Eta is 0.8.0b2 is (probably) not of  production quality,  yet
 
 
 If You think of eta in production soon -> talk to **Typelead**.
