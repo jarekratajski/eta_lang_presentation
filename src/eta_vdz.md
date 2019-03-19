@@ -142,6 +142,7 @@ swith (deployment) {
 ```
 
 
+
 ```haskell
 
 crazinessLevel::Deployment->String->Int
@@ -236,7 +237,7 @@ class MyEvent implements Event<X>
 }
 ```
 
-Disaster
+Disaster<!-- .element class="fragment" -->
 
 
 
@@ -271,15 +272,14 @@ data Person = Person { firstName :: String
 
 
 
+Immutability makes parallel processing  easy
+
+Haskell may compile your code to use threads
+without even asking<!-- .element class="fragment" -->
+
+
+
 And many more...
-
-
-
-# Haskel lesson
-
-Writing important business code in impure
-language such as Java, Kotlin or even Scala seems  to be an act of a great
-irresponsibility
 
 
 
@@ -291,7 +291,15 @@ irresponsibility
 
 
 
-yes but
+# Haskel lesson
+
+Writing important business code in impure, imperative
+language such as Java, Kotlin or even Scala seems  to be an act of a great
+irresponsibility
+
+
+
+# yes but...
 
 
 
@@ -310,7 +318,7 @@ Different way of thinking
 
 
 
-# Mix maybe
+# A Mix maybe?
 
 Core business logic, rules, algorithms in Haskell
 
@@ -353,10 +361,6 @@ We talk about unfinished product
 
 
 # Eta 1.2.3 intro
-
-
-
-## Quicksort(*)
 
 
 
@@ -598,7 +602,7 @@ Anatomy (1), Animation (6), AOP (2), API (26), Apple (3), Application (25), Appl
 
 
 
-What with native (C) code?
+What about  native (C/FFI) code? 
 
 
 
@@ -606,7 +610,7 @@ What with native (C) code?
 
 
 
-Project  typelead/hackage ==  patches for common hackage projects.
+Project  typelead/hackage ==  patches for common hackage projects
 
 
 
@@ -639,7 +643,7 @@ https://github.com/typelead/eta-hackage/blob/master/patches/text-1.2.2.2.patch
 
 ### Eta is as close as you can get with Haskell/GHC on JVM
 
-Lots of crazy haskell codes that use GHC extensions work on Eta without any problems.
+Lots of crazy haskell codes that use GHC extensions work on Eta without any problems
 
 
 
@@ -674,6 +678,7 @@ fibtcoinner n sum presum = fibtcoinner  (n-1) (sum + presum) sum
 fibtco n = fibbtcoinner n 1 0
 
 ```
+
 
 
 JVM does not support TCO :-(
@@ -749,11 +754,13 @@ main = print $ show $  fibtco 1000000
 
 
 Actually there is a bug above
-TCO in eta did not work always two years ago
+
+TCO in `eta` did not work always two years ago
 
 
 
-Fix/Improve compiler of Haskell written in Haskell (ghc) while learning haskell
+## A task
+Fix/Improve TCO in compiler of Haskell written in Haskell (ghc) while learning haskell
 
 
 
@@ -1242,7 +1249,7 @@ foreign export java "@static pl.setblack.life.Life.newState" newStateXP
 ## problems
 
 - lot of imports to write for every  simple java class
-   - this will be fixed thanks to ffi tool
+   - this will be fixed thanks to `ffi tool`
 - it took me a while to find out how to pass state between haskell and java
 - other bug found (and resolved)
 - java monad / io monad - not totally intuitive (for a newbie) 
@@ -1259,7 +1266,7 @@ I used Frege very shortly
 - Interoperation with Java is easier with Frege
 - Frege will not be close to GHC in the near future
    - at the semantics level
-   - at the base libraries level   
+   - at the libraries level   
 -  Eta provides more tools (gradle plugin, etlas etc.)
 
 
@@ -1309,17 +1316,13 @@ You can help! There are lot of small things to do
 
 
 
-# Summary
+Even if You stick to Java 
 
-Even if You stick to Java learning haskell can help You evolve
+learning Haskell can help You improve java skills
 
-You may understand the `M...` word
+You may accidentally understand the `M...` word
 
-
-
-ETA is a small Step
-
-You can code haskell but do not get out of JVM   
-
+### Thank You
+`@jarek000000`
 
 
